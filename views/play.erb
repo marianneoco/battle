@@ -1,6 +1,6 @@
 <%= $player_1_name %> vs <%= $player_2_name %>
 <br>
-<%= $player_2_name %>'s HP: <%= 0 %>
+<%= $player_2_name %>'s HP: <%= $player_2.hit_points %>
 
 <form action = /attack-result method = post>
   <input type = "submit" value = "Attack Player 2!">
