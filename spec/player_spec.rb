@@ -13,7 +13,7 @@ describe Player do
     expect(player1.hit_points).to eq 0
   end
 
-  it "hit points should reduce when attacked" do
-    expect { player1.attack(player2) }.to change { player2.hit_points }.by(-10)
+  it "should reduce hit points when attacked" do
+    expect { player1.attacked }.to change { player1.hit_points }.by (-10)
   end
 end

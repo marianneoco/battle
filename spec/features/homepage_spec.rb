@@ -8,4 +8,14 @@ feature 'Homepage' do
     sign_in_and_play
     expect(page).to have_content("Bob vs Bill")
   end
+
+  scenario "As Player 1, I want to see Player 2's hit points" do
+    sign_in_and_play
+    expect(page).to have_content("Bill's HP: 0")
+  end
+
+  scenario "As Player 1, I want it to display that it's my turn" do
+    sign_in_and_play
+    expect(page).to have_content "Bob's turn"
+  end
 end

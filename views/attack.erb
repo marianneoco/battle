@@ -1,3 +1,9 @@
-<%= $player_2_name %> was attacked by <%= $player_1_name %>
+<%= @game.player2.name %> was attacked by <%= @game.player1.name %>
 <br>
-<%= $player_2_name %>'s HP: <%= $player_2.hit_points %>
+<%= @game.player2.name %>'s HP: <%= @game.player2.hit_points %>
+<br>
+<%= @game.switch_turn.name %>'s turn
+<br>
+<form action = /attack-again method = post>
+  <input type = "submit" value = "Attack <%= @game.player1.name %>!">
+</form>
