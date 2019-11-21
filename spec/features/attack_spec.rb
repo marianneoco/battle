@@ -1,5 +1,9 @@
 feature "Attack" do
 
+  before do
+    allow(Kernel).to receive(:rand).and_return(10)
+  end
+
   scenario "As Player 1, I want to attack Player 2 and get a confirmation" do
     sign_in_and_play
     click_button "Attack Bill!"

@@ -8,7 +8,7 @@ class Player
   end
 
   def attacked
-    @hit_points -= 10
+    @hit_points -= Kernel.rand(1..15)
   end
 
   attr_reader :name, :hit_points
