@@ -1,6 +1,7 @@
 require 'sinatra'
 
 require './lib/player'
+require './lib/computer'
 require './lib/game'
 
 class Battle < Sinatra::Base
@@ -11,7 +12,11 @@ class Battle < Sinatra::Base
 
   post '/names' do
     @player1 = Player.new(params[:player_1_name])
-    @player2 = Player.new(params[:player_2_name])
+    if params[:player_2_name].empty?
+      @player2 = Computer.new("COMPUTER")
+    else
+      @player2 = Player.new(params[:player_2_name])
+    end
     @game = Game.new_game(@player1, @player2)
     redirect '/play'
   end
@@ -21,7 +26,11 @@ class Battle < Sinatra::Base
   end
 
   get '/play' do
-    erb :play
+    if @game.turn.computer?
+      erb :computer_play
+    else
+      erb :play
+    end
   end
 
   post '/attack-result' do

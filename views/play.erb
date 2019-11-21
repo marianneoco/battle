@@ -17,7 +17,7 @@
 </form>
 <% if @game.turn.paralyse == 0 %>
   <form action = /attack-paralyse method = post>
-    <input type = "submit" value = "Paralyse <%= @game.not_turn.name %>!">
+    <input type = "submit" value = "Paralyse <%= @game.not_turn.name %>! Paralyse only works 50% of the time.">
   </form>
 <% else %>
   Paralyse can only be used once per game.

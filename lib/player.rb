@@ -16,5 +16,9 @@ class Player
     @paralyse += 1
   end
 
+  def computer?
+    false
+  end
+
   attr_reader :name, :hit_points, :paralyse
 end
