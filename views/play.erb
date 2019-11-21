@@ -13,11 +13,11 @@
   <input type = "submit" value = "Attack <%= @game.not_turn.name %>!">
 </form>
 <form action = /attack-result method = post>
-  <input type = "submit" value = "Kick <%= @game.not_turn.name %>!">
+  <input type = "submit" value = "Poison <%= @game.not_turn.name %>! Poison only works 10% of the time but lasts for the rest of the game if successful.">
 </form>
 <% if @game.turn.paralyse == 0 %>
   <form action = /attack-paralyse method = post>
-    <input type = "submit" value = "Paralyse <%= @game.not_turn.name %>! Paralyse only works 50% of the time.">
+    <input type = "submit" value = "Paralyse <%= @game.not_turn.name %>! Paralyse works 50% of the time and you can use it once. It causes the other player to skip a go.">
   </form>
 <% else %>
   Paralyse can only be used once per game.

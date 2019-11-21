@@ -35,4 +35,8 @@ class Game
     rand(1..2) == 1 ? true : false
   end
 
+  def poison?
+    rand(1..10) == 1? true : false
+  end
+
 end
