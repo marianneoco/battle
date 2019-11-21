@@ -1,8 +1,10 @@
 class Player
 
+  DEFAULT_STARTING_POINTS = 50
+
   def initialize(name)
     @name = name
-    @hit_points = 0
+    @hit_points = DEFAULT_STARTING_POINTS
   end
 
   def attacked

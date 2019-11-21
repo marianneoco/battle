@@ -1,9 +1,18 @@
-<%= @game.player2.name %> was attacked by <%= @game.player1.name %>
+<%= @game.not_turn.name %> was attacked by <%= @game.turn.name %>
 <br>
-<%= @game.player2.name %>'s HP: <%= @game.player2.hit_points %>
 <br>
-<%= @game.switch_turn.name %>'s turn
+<%= @game.not_turn.name %>'s HP: <%= @game.not_turn.hit_points %>
 <br>
-<form action = /attack-again method = post>
-  <input type = "submit" value = "Attack <%= @game.player1.name %>!">
-</form>
+<br>
+<%= @game.turn.name %>'s HP: <%= @game.turn.hit_points %>
+<br>
+<br>
+<% if @game.not_turn.hit_points <= 0 %>
+  Game over!!! <%= @game.turn.name %> wins!!!
+<% elsif @game.turn.hit_points <= 0 %>
+  Game over!!! <%= @game.not_turn.name %> wins!!!
+<% else %>
+  <form action = /continue method = post>
+    <input type = "submit" value = "Continue game!">
+  </form>
+<% end %>

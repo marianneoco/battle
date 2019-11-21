@@ -10,7 +10,7 @@ describe Player do
   end
 
   it "should be able to display current points" do
-    expect(player1.hit_points).to eq 0
+    expect(player1.hit_points).to eq 50
   end
 
   it "should reduce hit points when attacked" do

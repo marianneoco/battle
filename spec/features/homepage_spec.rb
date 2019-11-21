@@ -11,7 +11,7 @@ feature 'Homepage' do
 
   scenario "As Player 1, I want to see Player 2's hit points" do
     sign_in_and_play
-    expect(page).to have_content("Bill's HP: 0")
+    expect(page).to have_content("Bill's HP: 50")
   end
 
   scenario "As Player 1, I want it to display that it's my turn" do
