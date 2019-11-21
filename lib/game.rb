@@ -31,4 +31,8 @@ class Game
     player.attacked
   end
 
+  def paralyse?
+    rand(1..2) == 1 ? true : false
+  end
+
 end

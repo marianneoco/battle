@@ -1,0 +1,18 @@
+<%= @game.not_turn.name %> was paralysed by <%= @game.turn.name %>!
+<br>
+<br>
+<% if @game.paralyse? %>
+  <%= @game.turn.name %> gets another turn.
+  <br>
+  <br>
+  <form action = /play>
+    <input type = "submit" value = "Continue game!">
+  </form>
+<% else %>
+  Paralyse was not successful!
+  <br>
+  <br>
+  <form action = /continue method = post>
+    <input type = "submit" value = "Continue game!">
+  </form>
+<% end %>

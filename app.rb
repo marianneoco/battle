@@ -29,6 +29,11 @@ class Battle < Sinatra::Base
     erb :attack
   end
 
+  post '/attack-paralyse' do
+    @game.turn.paralyse_used
+    erb :attack_paralyse
+  end
+
   post '/continue' do
     @game.switch_turn
     redirect '/play'

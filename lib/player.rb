@@ -5,12 +5,16 @@ class Player
   def initialize(name)
     @name = name
     @hit_points = DEFAULT_STARTING_POINTS
+    @paralyse = 0
   end
 
   def attacked
     @hit_points -= Kernel.rand(1..15)
   end
 
-  attr_reader :name, :hit_points
+  def paralyse_used
+    @paralyse += 1
+  end
 
+  attr_reader :name, :hit_points, :paralyse
 end

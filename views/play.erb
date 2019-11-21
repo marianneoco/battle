@@ -12,3 +12,13 @@
 <form action = /attack-result method = post>
   <input type = "submit" value = "Attack <%= @game.not_turn.name %>!">
 </form>
+<form action = /attack-result method = post>
+  <input type = "submit" value = "Kick <%= @game.not_turn.name %>!">
+</form>
+<% if @game.turn.paralyse == 0 %>
+  <form action = /attack-paralyse method = post>
+    <input type = "submit" value = "Paralyse <%= @game.not_turn.name %>!">
+  </form>
+<% else %>
+  Paralyse can only be used once per game.
+<% end %>
